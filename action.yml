@@ -1,0 +1,10 @@
+name: "test-workflow-action"
+description: "well it will do something"
+author: "batman"
+inputs:
+  yaml_files:
+    description: "Real all changes yaml files"
+    required: true
+runs:
+  using: "node16"
+  main: "lib/main.js"
