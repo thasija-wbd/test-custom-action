@@ -11,5 +11,4 @@ spec:
   lifecycle: experimental
   owner: team-xyz
   definition:
-    - $text: ./openapi.json
-    - $text: ./openapi1.json
+    - $text: [./openapi.json, ./openapi1.json]
