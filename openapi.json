@@ -1,0 +1,324 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Service Catalog Metering Backend",
+    "version": "1.0.0"
+  },
+  "tags": [
+    {
+      "name": "job-definition/",
+      "description": "jobDefinition related calls"
+    },
+    {
+      "name": "execute/",
+      "description": "execute related calls"
+    }
+  ],
+  "paths": {
+    "/execute/usage-data/": {
+      "post": {
+        "summary": "execute usage-data endpoint",
+        "description": "execute usage-data endpoint",
+        "tags": [
+          "execute/"
+        ],
+        "responses": {
+          "200": {
+            "description": "returns with usage-data execution's output"
+          }
+        }
+      }
+    },
+    "/execute/cost-data/": {
+      "post": {
+        "summary": "execute cost-data endpoint",
+        "description": "execute cost-data endpoint",
+        "tags": [
+          "execute/"
+        ],
+        "responses": {
+          "200": {
+            "description": "returns with cost-data execution's output"
+          }
+        }
+      }
+    },
+    "/execute/calculation/": {
+      "post": {
+        "summary": "execute calculation endpoint",
+        "description": "execute calculation endpoint",
+        "tags": [
+          "execute/"
+        ],
+        "responses": {
+          "200": {
+            "description": "returns with calculation execution's output"
+          }
+        }
+      }
+    },
+    "/execute/metering-cost-apis/": {
+      "get": {
+        "summary": "get metering-cost-apis endpoint",
+        "description": "get metering-cost-apis endpoint",
+        "tags": [
+          "execute/"
+        ],
+        "responses": {
+          "200": {
+            "description": "returns with all of the available api gateway endpoints"
+          }
+        }
+      }
+    },
+    "/job-definition/": {
+      "get": {
+        "summary": "jobDefinitions list endpoint",
+        "description": "jobDefinitions list endpoint",
+        "tags": [
+          "job-definition/"
+        ],
+        "responses": {
+          "200": {
+            "description": "returns with jobDefinition list"
+          }
+        }
+      },
+      "post": {
+        "summary": "jobDefinition create endpoint",
+        "description": "jobDefinition create endpoint",
+        "tags": [
+          "job-definition/"
+        ],
+        "responses": {
+          "200": {
+            "description": "returns with the new jobDefinition's details"
+          }
+        }
+      }
+    },
+    "/job-definition/{jobId}/details/": {
+      "get": {
+        "summary": "jobDefinition detail endpoint",
+        "description": "jobDefinition detail endpoint",
+        "tags": [
+          "job-definition/"
+        ],
+        "parameters": [
+          {
+            "name": "jobId",
+            "in": "path",
+            "description": "the id of the jobDefinition",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "returns with jobDefinition details"
+          }
+        }
+      }
+    },
+    "/job-definition/{jobId}/": {
+      "put": {
+        "summary": "jobDefinition update endpoint",
+        "description": "jobDefinition update endpoint",
+        "tags": [
+          "job-definition/"
+        ],
+        "parameters": [
+          {
+            "name": "jobId",
+            "in": "path",
+            "description": "the id of the jobDefinition",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "returns with the updated jobDefinition's details"
+          }
+        }
+      },
+      "delete": {
+        "summary": "jobDefinition delete endpoint",
+        "description": "jobDefinition delete endpoint",
+        "tags": [
+          "job-definition/"
+        ],
+        "parameters": [
+          {
+            "name": "jobId",
+            "in": "path",
+            "description": "the id of the jobDefinition",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "returns with 'Job Deleted Successfully'"
+          }
+        }
+      }
+    },
+    "/job-definition/{name}/version/{version}/": {
+      "get": {
+        "summary": "jobDefinition uniqueness check endpoint",
+        "description": "jobDefinition uniqueness check endpoint",
+        "tags": [
+          "job-definition/"
+        ],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "path",
+            "description": "the name of the jobDefinition",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "description": "the version of the jobDefinition",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "returns with exist: true/false"
+          }
+        }
+      }
+    },
+    "/job-definition/{jobId}/execution/": {
+      "get": {
+        "summary": "jobDefinition execution list endpoint",
+        "description": "jobDefinition execution list endpoint",
+        "tags": [
+          "job-definition/"
+        ],
+        "parameters": [
+          {
+            "name": "jobId",
+            "in": "path",
+            "description": "the id of the jobDefinition",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "returns with the jobs' executions"
+          }
+        }
+      }
+    },
+    "/job-definition/{jobId}/execution/{executionId}/": {
+      "get": {
+        "summary": "jobDefinition execution list endpoint",
+        "description": "jobDefinition execution list endpoint",
+        "tags": [
+          "job-definition/"
+        ],
+        "parameters": [
+          {
+            "name": "jobId",
+            "in": "path",
+            "description": "the id of the jobDefinition",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "executionId",
+            "in": "path",
+            "description": "the id of the execution",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "returns with the execution's details"
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "summary": "Health check endpoint",
+        "description": "Health check endpoint",
+        "responses": {
+          "200": {
+            "description": "PONG!",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/test": {
+      "get": {
+        "summary": "Test endpoint",
+        "description": "Test endpoint which tests cache with the jobPersisterLambdaName config",
+        "responses": {
+          "200": {
+            "description": "Returns with jobPersisterLambdaName and if cached or not",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "This is a test: DummyLambdaName"
+                    },
+                    "fromCache": {
+                      "type": "boolean",
+                      "example": true
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {}
+}
