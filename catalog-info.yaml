@@ -10,5 +10,4 @@ spec:
   type: openapi
   lifecycle: experimental
   owner: team-xyz
-  definition:
-    - $text: [./openapi.json, ./openapi1.json]
+  definition: [$text: ./openapi.json, $text: ./openapi1.json]
