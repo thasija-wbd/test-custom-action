@@ -1,0 +1,90 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Github Client Backend",
+    "version": "1.0.0"
+  },
+  "paths": {
+    "/health": {
+      "get": {
+        "summary": "Health check endpoint",
+        "description": "Health check endpoint",
+        "responses": {
+          "200": {
+            "description": "PONG!",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "status": {
+                      "type": "string",
+                      "example": "ok"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/team-pull-requests/:team": {
+      "get": {
+        "summary": "Get pull requests for a team",
+        "description": "Get pull requests for a team",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "team",
+            "required": true,
+            "description": "The GitHub team name",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of pull requests"
+          }
+        }
+      }
+    },
+    "/compliance/non-codeowner": {
+      "get": {
+        "summary": "Gets all the repositories from the org where service-catalog is not present in the CODEOWNERS file",
+        "description": "Gets all the repositories from the org where service-catalog is not present in the CODEOWNERS file",
+        "responses": {
+          "200": {
+            "description": "A list of repositories"
+          }
+        }
+      }
+    },
+    "/compliance/not-validated": {
+      "get": {
+        "summary": "Gets all the repositories from the org where the validation has not been executed",
+        "description": "Gets all the repositories from the org where the validation has not been executed",
+        "responses": {
+          "200": {
+            "description": "A list of repositories"
+          }
+        }
+      }
+    },
+    "/compliance/no-workflow-present": {
+      "get": {
+        "summary": "Gets all the repositories from the org where the validation is not preseint in the repository",
+        "description": "Gets all the repositories from the org where the validation is not preseint in the repository",
+        "responses": {
+          "200": {
+            "description": "A list of repositories"
+          }
+        }
+      }
+    }
+  },
+  "components": {},
+  "tags": []
+}
